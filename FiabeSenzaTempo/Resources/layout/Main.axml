@@ -24,6 +24,6 @@
         android:layout_height="0px"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        ads:adSize="BANNER"
+        ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/ad_unit_id" />
 </LinearLayout>
