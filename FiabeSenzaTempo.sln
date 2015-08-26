@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiabeSenzaTempo", "FiabeSenzaTempo\FiabeSenzaTempo.csproj", "{989C71B4-D3E0-4EC9-8C6B-91239CE601E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiabeSenzaTempo.UITests", "FiabeSenzaTempo.UITests\FiabeSenzaTempo.UITests.csproj", "{C976F7FA-D59A-4D42-90E7-C9083E00F860}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{989C71B4-D3E0-4EC9-8C6B-91239CE601E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989C71B4-D3E0-4EC9-8C6B-91239CE601E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989C71B4-D3E0-4EC9-8C6B-91239CE601E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989C71B4-D3E0-4EC9-8C6B-91239CE601E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C976F7FA-D59A-4D42-90E7-C9083E00F860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C976F7FA-D59A-4D42-90E7-C9083E00F860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C976F7FA-D59A-4D42-90E7-C9083E00F860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C976F7FA-D59A-4D42-90E7-C9083E00F860}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
