@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_weight="25"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="Text"
+        android:layout_weight="75"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:id="@+id/textViewTitle"
+        android:gravity="center_vertical"
+        android:phoneNumber="true" />
+</LinearLayout>

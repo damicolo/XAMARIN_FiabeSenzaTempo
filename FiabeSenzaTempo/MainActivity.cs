@@ -19,7 +19,7 @@ namespace FiabeSenzaTempo
 	{
 		private const string m_playlist = "http://damicolo1.azurewebsites.net/FavoleSenzaTempoYoutube.txt";
 		private ListView m_myList;
-		private ArrayAdapter m_adapter;
+		private FavoleListViewAdapter m_adapter;
 		private VideoView videoView;
 		private bool m_videoSourceSet = false;
 		private List<videoItem> m_theVideos = new List<videoItem>();
@@ -35,26 +35,34 @@ namespace FiabeSenzaTempo
 
 			// retrieve the playlist from azure
 			WebClient httpclient = new WebClient (); 
-			string theFileList = httpclient.DownloadString (m_playlist);
-			theFileList = theFileList.Replace ("\r\n", ",");
+			string theFileList = "";
+			try{
+				theFileList = httpclient.DownloadString (m_playlist);
+				theFileList = theFileList.Replace ("\r\n", ",");
+			}
+			catch(Exception ex) {
+				Console.WriteLine (ex.ToString ());
+			}
 			string[] VideoList = theFileList.Split (new char[] { ','});
 			List<string> myData = new List<string> ();
 			foreach (string s in VideoList) {
 				string[] elements = s.Split (new char[]{ ';' });
+				if (elements.Length < 3)
+					continue;
 				m_theVideos.Add (new videoItem (){ Title = elements [1], URL = elements [2] });
 				myData.Add (m_theVideos[m_theVideos.Count-1].Title);
 			}
 
 			// set the lis and adapter
 			m_myList = (ListView)this.FindViewById (Resource.Id.myListView);
-			m_myList.ItemClick += myList_ItemClick;
-			m_adapter = new ArrayAdapter (this, Android.Resource.Layout.SimpleListItem1,myData);
+			//m_adapter = new ArrayAdapter (this, Android.Resource.Layout.SimpleListItem1,myData);
+			m_adapter = new FavoleListViewAdapter (this, m_theVideos);
 			m_myList.Adapter = m_adapter;
+			m_myList.ItemClick += myList_ItemClick;
 
 			t = new System.Timers.Timer ();
 			t.Interval = 500;
 			t.Elapsed += T_Elapsed;
-
 
 			videoView = FindViewById<VideoView>(Resource.Id.videoView1);
 			videoView.Touch += videoView_Touch;
