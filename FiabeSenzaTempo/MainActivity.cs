@@ -14,7 +14,7 @@ using Android.Gms.Ads;
 
 namespace FiabeSenzaTempo
 {
-	[Activity (Label = "Fiabe Senza Tempo", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Fiabe Senza Tempo", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 		public class videoItem{
@@ -33,6 +33,8 @@ namespace FiabeSenzaTempo
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Main);
+
+			this.Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
 
 			WebClient httpclient = new WebClient (); 
 			theFileList = httpclient.DownloadString ("http://damicolo1.azurewebsites.net/FavoleSenzaTempoYoutube.txt");
