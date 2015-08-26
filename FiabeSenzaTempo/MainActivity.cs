@@ -18,12 +18,12 @@ namespace FiabeSenzaTempo
 	public class MainActivity : Activity
 	{
 		private const string m_playlist = "http://damicolo1.azurewebsites.net/FavoleSenzaTempoYoutube.txt";
-		ListView m_myList;
-		ArrayAdapter m_adapter;
-		VideoView videoView;
+		private ListView m_myList;
+		private ArrayAdapter m_adapter;
+		private VideoView videoView;
 		private bool m_videoSourceSet = false;
-		List<videoItem> m_theVideos = new List<videoItem>();
-
+		private List<videoItem> m_theVideos = new List<videoItem>();
+		private System.Timers.Timer t;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -51,13 +51,38 @@ namespace FiabeSenzaTempo
 			m_adapter = new ArrayAdapter (this, Android.Resource.Layout.SimpleListItem1,myData);
 			m_myList.Adapter = m_adapter;
 
+			t = new System.Timers.Timer ();
+			t.Interval = 500;
+			t.Elapsed += T_Elapsed;
+
+
 			videoView = FindViewById<VideoView>(Resource.Id.videoView1);
 			videoView.Touch += videoView_Touch;
-
+			videoView.Info += VideoView_Info;
+			videoView.Prepared += VideoView_Prepared;
 			// advertising setup
 			AdView mAdView = (AdView) this.FindViewById(Resource.Id.adView);
 			AdRequest adRequest = new AdRequest.Builder ().Build ();
 			mAdView.LoadAd(adRequest);
+		}
+
+		void T_Elapsed (object sender, System.Timers.ElapsedEventArgs e)
+		{
+			RunOnUiThread(() =>
+				{
+					Console.WriteLine(videoView.CurrentPosition.ToString());
+				});
+				
+		}
+
+		void VideoView_Info (object sender, Android.Media.MediaPlayer.InfoEventArgs e)
+		{
+
+		}
+
+		void VideoView_Prepared (object sender, EventArgs e)
+		{
+			Console.WriteLine (videoView.Duration.ToString());
 		}
 
 		protected override void OnPause()
@@ -91,6 +116,9 @@ namespace FiabeSenzaTempo
 				videoView.SetVideoURI(uri);
 				videoView.Start ();
 				m_videoSourceSet = true;
+
+				t.Enabled = true;
+				t.Start();
 			}
 			catch (Exception ex) 
 			{
