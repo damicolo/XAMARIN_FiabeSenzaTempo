@@ -20,6 +20,8 @@ namespace FiabeSenzaTempo
 		private const string m_playlist = "http://damicolo1.azurewebsites.net/FavoleSenzaTempoYoutube.txt";
 		ListView m_myList;
 		ArrayAdapter m_adapter;
+		VideoView videoView;
+		private bool m_videoSourceSet = false;
 		List<videoItem> m_theVideos = new List<videoItem>();
 
 
@@ -49,12 +51,35 @@ namespace FiabeSenzaTempo
 			m_adapter = new ArrayAdapter (this, Android.Resource.Layout.SimpleListItem1,myData);
 			m_myList.Adapter = m_adapter;
 
+			videoView = FindViewById<VideoView>(Resource.Id.videoView1);
+			videoView.Touch += videoView_Touch;
+
 			// advertising setup
 			AdView mAdView = (AdView) this.FindViewById(Resource.Id.adView);
 			AdRequest adRequest = new AdRequest.Builder ().Build ();
 			mAdView.LoadAd(adRequest);
 		}
+
+		protected override void OnPause()
+		{
+			base.OnPause ();
+		}
+
+		protected override void OnResume()
+		{
+			base.OnResume ();
+		}
 			
+		private void videoView_Touch(object sender, View.TouchEventArgs e)
+		{
+			if (e.Event.Action == MotionEventActions.Down) {
+				if (videoView.IsPlaying)
+					videoView.Pause ();
+				else if (m_videoSourceSet)
+					videoView.Start ();
+			}	
+		}
+						
 		private async void myList_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
 		{
 			videoItem sellectedItem = m_theVideos [e.Position];
@@ -63,9 +88,9 @@ namespace FiabeSenzaTempo
 			{
 				YouTubeUri theURI = await  YouTube.GetVideoUriAsync(videoID,YouTubeQuality.Quality720P);
 				var uri = Android.Net.Uri.Parse(theURI.Uri.AbsoluteUri);
-				var videoView = FindViewById<VideoView>(Resource.Id.videoView1);
 				videoView.SetVideoURI(uri);
 				videoView.Start ();
+				m_videoSourceSet = true;
 			}
 			catch (Exception ex) 
 			{
