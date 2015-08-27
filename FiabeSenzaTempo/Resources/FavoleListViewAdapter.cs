@@ -3,6 +3,9 @@ using Android.Widget;
 using System.Collections.Generic;
 using Android.Content;
 using Android.Views;
+using System.Threading.Tasks;
+using Android.Graphics;
+using System.Net.Http;
 
 namespace FiabeSenzaTempo
 {
@@ -16,14 +19,13 @@ namespace FiabeSenzaTempo
 			m_context = context;
 			m_theVideos = theVideos;
 		}
-
 		#region implemented abstract members of BaseAdapter
 
 		public override long GetItemId (int position)
 		{
 			return position;
 		}
-
+			
 		public override Android.Views.View GetView (int position, View convertView, Android.Views.ViewGroup parent)
 		{
 			View row = convertView;
@@ -32,6 +34,10 @@ namespace FiabeSenzaTempo
 			}
 			TextView theTitle = (TextView)row.FindViewById (Resource.Id.textViewTitle);
 			theTitle.Text = m_theVideos [position].Title;
+
+			ImageView theImage = row.FindViewById<ImageView>(Resource.Id.imageViewTitle);
+			theImage.SetImageBitmap(m_theVideos [position].Image);
+
 			return row;	
 		}
 

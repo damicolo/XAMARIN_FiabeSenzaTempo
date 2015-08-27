@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.Graphics;
 
 namespace FiabeSenzaTempo
 {
@@ -7,8 +8,7 @@ namespace FiabeSenzaTempo
 		public string Title;
 		public string URL;
 		public string ImageURL;
-
-
+		public Bitmap Image;
 
 		public videoItem ()
 		{

@@ -8,14 +8,14 @@
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"
-        android:layout_weight="35"
+        android:layout_weight="45"
         android:layout_width="match_parent"
         android:layout_height="0px"
         android:id="@+id/myListView" />
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="50"
+        android:layout_weight="40"
         android:id="@+id/videoView1" />
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

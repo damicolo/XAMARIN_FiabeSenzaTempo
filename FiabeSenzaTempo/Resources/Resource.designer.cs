@@ -3412,7 +3412,7 @@ namespace FiabeSenzaTempo
 			public const int image = 2131296319;
 			
 			// aapt resource value: 0x7f090066
-			public const int imageView1 = 2131296358;
+			public const int imageViewTitle = 2131296358;
 			
 			// aapt resource value: 0x7f090085
 			public const int info = 2131296389;
