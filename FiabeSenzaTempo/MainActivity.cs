@@ -13,6 +13,8 @@ using Android.Gms.Ads;
 using System.Threading.Tasks;
 using Android.Graphics;
 using System.Net.Http;
+using Java.IO;
+
 
 
 namespace FiabeSenzaTempo
@@ -41,7 +43,7 @@ namespace FiabeSenzaTempo
 				theFileList = theFileList.Replace ("\r\n", ",");
 			}
 			catch(Exception ex) {
-				Console.WriteLine (ex.ToString ());
+				System.Console.WriteLine (ex.ToString ());
 			}
 			string[] VideoList = theFileList.Split (new char[] { ','});
 			List<string> myData = new List<string> ();
@@ -83,15 +85,38 @@ namespace FiabeSenzaTempo
 
 		private async Task<Bitmap> GetImageFromUrl(string url)
 		{
-			using(var client = new HttpClient())
-			{
-				var msg = await client.GetAsync(url);
-				if (msg.IsSuccessStatusCode)
-				{
-					using(var stream = await msg.Content.ReadAsStreamAsync())
-					{
-						﻿var bitmap = await BitmapFactory.DecodeStreamAsync(stream);
-						return bitmap;
+			// let's check if the file exists...
+			ContextWrapper cw = new ContextWrapper (this.ApplicationContext);
+			File directory = cw.GetDir("imgDir", FileCreationMode.Private);
+			string[] elements = url.Split (new char[] { '/' });
+
+			bool fileExists = false;
+			string fileName = directory + "/" + elements [elements.Length - 1];
+			if (System.IO.File.Exists (fileName)) {
+				fileExists = true;
+				var imageFile = new Java.IO.File(fileName);
+				Bitmap bitmap = BitmapFactory.DecodeFile(imageFile.AbsolutePath);
+				return bitmap;
+			}
+
+
+
+			if (!fileExists) {
+				using (var client = new HttpClient ()) {
+					var msg = await client.GetAsync (url);
+					if (msg.IsSuccessStatusCode) {
+						using (var stream = await msg.Content.ReadAsStreamAsync ()) {						﻿
+							var bitmap = await BitmapFactory.DecodeStreamAsync (stream);
+							File myPath = new File (directory, elements [elements.Length - 1]);
+							try {
+								using (var os = new System.IO.FileStream (myPath.AbsolutePath, System.IO.FileMode.Create)) {
+									bitmap.Compress (Bitmap.CompressFormat.Png, 100, os);
+								}
+							} catch (Exception ex) {
+								System.Console.Write (ex.Message);
+							}				
+							return bitmap;
+						}
 					}
 				}
 			}
@@ -100,7 +125,7 @@ namespace FiabeSenzaTempo
 
 		void M_myList_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
 		{
-			Console.WriteLine ("M_myList_ItemClick " + e.Position.ToString ());
+			System.Console.WriteLine ("M_myList_ItemClick " + e.Position.ToString ());
 			videoItem sellectedItem = m_theVideos [e.Position];
 			string videoID = sellectedItem.URL.Split (new char[] { '=' })[1];
 
