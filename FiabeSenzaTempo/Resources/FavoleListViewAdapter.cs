@@ -33,7 +33,7 @@ namespace FiabeSenzaTempo
 				row = LayoutInflater.From(m_context).Inflate(Resource.Layout.FavoleListeViewItem,null,false);
 			}
 			TextView theTitle = (TextView)row.FindViewById (Resource.Id.textViewTitle);
-			theTitle.Text = m_theVideos [position].Title;
+			theTitle.Text = m_theVideos [position].Title.ToUpper();
 
 			ImageView theImage = row.FindViewById<ImageView>(Resource.Id.imageViewTitle);
 			theImage.SetImageBitmap(m_theVideos [position].Image);

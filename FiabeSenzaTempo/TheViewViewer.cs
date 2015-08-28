@@ -25,6 +25,10 @@ namespace FiabeSenzaTempo
 		{
 			RequestWindowFeature(WindowFeatures.NoTitle);
 			base.OnCreate (bundle);
+
+			Window.AddFlags(WindowManagerFlags.Fullscreen);
+			Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
+
 			SetContentView (Resource.Layout.VideoViewer);
 
 			videoView = FindViewById<VideoView>(Resource.Id.videoViewer);
