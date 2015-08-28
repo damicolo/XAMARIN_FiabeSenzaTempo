@@ -129,6 +129,7 @@
     <Compile Include="YouTube.cs" />
     <Compile Include="videoItem.cs" />
     <Compile Include="Resources\FavoleListViewAdapter.cs" />
+    <Compile Include="TheViewViewer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -141,6 +142,7 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\layout\FavoleListeViewItem.axml" />
     <AndroidResource Include="Resources\drawable-xhdpi\favolesenzatempo.jpg" />
+    <AndroidResource Include="Resources\layout\VideoViewer.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

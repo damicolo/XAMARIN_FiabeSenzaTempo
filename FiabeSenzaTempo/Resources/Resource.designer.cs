@@ -3231,8 +3231,8 @@ namespace FiabeSenzaTempo
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f09007a
-			public const int action0 = 2131296378;
+			// aapt resource value: 0x7f090079
+			public const int action0 = 2131296377;
 			
 			// aapt resource value: 0x7f090057
 			public const int action_bar = 2131296343;
@@ -3258,8 +3258,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090058
 			public const int action_context_bar = 2131296344;
 			
-			// aapt resource value: 0x7f09007e
-			public const int action_divider = 2131296382;
+			// aapt resource value: 0x7f09007d
+			public const int action_divider = 2131296381;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -3279,8 +3279,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f09003d
 			public const int activity_chooser_view_content = 2131296317;
 			
-			// aapt resource value: 0x7f09006a
-			public const int adView = 2131296362;
+			// aapt resource value: 0x7f090069
+			public const int adView = 2131296361;
 			
 			// aapt resource value: 0x7f090021
 			public const int adjust_height = 2131296289;
@@ -3294,8 +3294,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f09002e
 			public const int always = 2131296302;
 			
-			// aapt resource value: 0x7f090071
-			public const int art = 2131296369;
+			// aapt resource value: 0x7f090070
+			public const int art = 2131296368;
 			
 			// aapt resource value: 0x7f09002b
 			public const int beginning = 2131296299;
@@ -3306,8 +3306,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f09004d
 			public const int buttonPanel = 2131296333;
 			
-			// aapt resource value: 0x7f090077
-			public const int buttons = 2131296375;
+			// aapt resource value: 0x7f090076
+			public const int buttons = 2131296374;
 			
 			// aapt resource value: 0x7f090010
 			public const int buyButton = 2131296272;
@@ -3318,8 +3318,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090016
 			public const int buy_with_google = 2131296278;
 			
-			// aapt resource value: 0x7f09007b
-			public const int cancel_action = 2131296379;
+			// aapt resource value: 0x7f09007a
+			public const int cancel_action = 2131296378;
 			
 			// aapt resource value: 0x7f090000
 			public const int cast_notification_id = 2131296256;
@@ -3327,8 +3327,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f09004f
 			public const int checkbox = 2131296335;
 			
-			// aapt resource value: 0x7f090081
-			public const int chronometer = 2131296385;
+			// aapt resource value: 0x7f090080
+			public const int chronometer = 2131296384;
 			
 			// aapt resource value: 0x7f090018
 			public const int classic = 2131296280;
@@ -3351,8 +3351,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090040
 			public const int default_activity_button = 2131296320;
 			
-			// aapt resource value: 0x7f090070
-			public const int default_control_frame = 2131296368;
+			// aapt resource value: 0x7f09006f
+			public const int default_control_frame = 2131296367;
 			
 			// aapt resource value: 0x7f090033
 			public const int dialog = 2131296307;
@@ -3360,8 +3360,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090025
 			public const int disableHome = 2131296293;
 			
-			// aapt resource value: 0x7f090078
-			public const int disconnect = 2131296376;
+			// aapt resource value: 0x7f090077
+			public const int disconnect = 2131296375;
 			
 			// aapt resource value: 0x7f090017
 			public const int donate_with_google = 2131296279;
@@ -3375,8 +3375,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f09002c
 			public const int end = 2131296300;
 			
-			// aapt resource value: 0x7f090086
-			public const int end_padder = 2131296390;
+			// aapt resource value: 0x7f090085
+			public const int end_padder = 2131296389;
 			
 			// aapt resource value: 0x7f09003e
 			public const int expand_activities_button = 2131296318;
@@ -3414,14 +3414,14 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090066
 			public const int imageViewTitle = 2131296358;
 			
-			// aapt resource value: 0x7f090085
-			public const int info = 2131296389;
+			// aapt resource value: 0x7f090084
+			public const int info = 2131296388;
 			
-			// aapt resource value: 0x7f09007f
-			public const int line1 = 2131296383;
+			// aapt resource value: 0x7f09007e
+			public const int line1 = 2131296382;
 			
-			// aapt resource value: 0x7f090083
-			public const int line3 = 2131296387;
+			// aapt resource value: 0x7f090082
+			public const int line3 = 2131296386;
 			
 			// aapt resource value: 0x7f090023
 			public const int listMode = 2131296291;
@@ -3432,20 +3432,20 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090012
 			public const int match_parent = 2131296274;
 			
-			// aapt resource value: 0x7f09007d
-			public const int media_actions = 2131296381;
+			// aapt resource value: 0x7f09007c
+			public const int media_actions = 2131296380;
 			
-			// aapt resource value: 0x7f09006f
-			public const int media_route_control_frame = 2131296367;
+			// aapt resource value: 0x7f09006e
+			public const int media_route_control_frame = 2131296366;
 			
-			// aapt resource value: 0x7f09006b
-			public const int media_route_list = 2131296363;
+			// aapt resource value: 0x7f09006a
+			public const int media_route_list = 2131296362;
+			
+			// aapt resource value: 0x7f090074
+			public const int media_route_volume_layout = 2131296372;
 			
 			// aapt resource value: 0x7f090075
-			public const int media_route_volume_layout = 2131296373;
-			
-			// aapt resource value: 0x7f090076
-			public const int media_route_volume_slider = 2131296374;
+			public const int media_route_volume_slider = 2131296373;
 			
 			// aapt resource value: 0x7f09002d
 			public const int middle = 2131296301;
@@ -3471,8 +3471,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090044
 			public const int parentPanel = 2131296324;
 			
-			// aapt resource value: 0x7f090072
-			public const int play_pause = 2131296370;
+			// aapt resource value: 0x7f090071
+			public const int play_pause = 2131296369;
 			
 			// aapt resource value: 0x7f09000c
 			public const int production = 2131296268;
@@ -3486,8 +3486,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090051
 			public const int radio = 2131296337;
 			
-			// aapt resource value: 0x7f09006d
-			public const int route_name = 2131296365;
+			// aapt resource value: 0x7f09006c
+			public const int route_name = 2131296364;
 			
 			// aapt resource value: 0x7f09000d
 			public const int sandbox = 2131296269;
@@ -3537,8 +3537,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090011
 			public const int selectionDetails = 2131296273;
 			
-			// aapt resource value: 0x7f09006e
-			public const int settings = 2131296366;
+			// aapt resource value: 0x7f09006d
+			public const int settings = 2131296365;
 			
 			// aapt resource value: 0x7f090050
 			public const int shortcut = 2131296336;
@@ -3567,11 +3567,11 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090039
 			public const int src_over = 2131296313;
 			
-			// aapt resource value: 0x7f09007c
-			public const int status_bar_latest_event_content = 2131296380;
+			// aapt resource value: 0x7f09007b
+			public const int status_bar_latest_event_content = 2131296379;
 			
-			// aapt resource value: 0x7f090079
-			public const int stop = 2131296377;
+			// aapt resource value: 0x7f090078
+			public const int stop = 2131296376;
 			
 			// aapt resource value: 0x7f09000e
 			public const int strict_sandbox = 2131296270;
@@ -3579,8 +3579,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090062
 			public const int submit_area = 2131296354;
 			
-			// aapt resource value: 0x7f090074
-			public const int subtitle = 2131296372;
+			// aapt resource value: 0x7f090073
+			public const int subtitle = 2131296371;
 			
 			// aapt resource value: 0x7f090024
 			public const int tabMode = 2131296292;
@@ -3591,11 +3591,11 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f09000f
 			public const int test = 2131296271;
 			
-			// aapt resource value: 0x7f090084
-			public const int text = 2131296388;
+			// aapt resource value: 0x7f090083
+			public const int text = 2131296387;
 			
-			// aapt resource value: 0x7f090082
-			public const int text2 = 2131296386;
+			// aapt resource value: 0x7f090081
+			public const int text2 = 2131296385;
 			
 			// aapt resource value: 0x7f09004a
 			public const int textSpacerNoButtons = 2131296330;
@@ -3603,17 +3603,17 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f090067
 			public const int textViewTitle = 2131296359;
 			
-			// aapt resource value: 0x7f090073
-			public const int text_wrapper = 2131296371;
+			// aapt resource value: 0x7f090072
+			public const int text_wrapper = 2131296370;
 			
-			// aapt resource value: 0x7f090080
-			public const int time = 2131296384;
+			// aapt resource value: 0x7f09007f
+			public const int time = 2131296383;
 			
 			// aapt resource value: 0x7f090043
 			public const int title = 2131296323;
 			
-			// aapt resource value: 0x7f09006c
-			public const int title_bar = 2131296364;
+			// aapt resource value: 0x7f09006b
+			public const int title_bar = 2131296363;
 			
 			// aapt resource value: 0x7f090046
 			public const int title_template = 2131296326;
@@ -3627,8 +3627,8 @@ namespace FiabeSenzaTempo
 			// aapt resource value: 0x7f09002a
 			public const int useLogo = 2131296298;
 			
-			// aapt resource value: 0x7f090069
-			public const int videoView1 = 2131296361;
+			// aapt resource value: 0x7f090086
+			public const int videoViewer = 2131296390;
 			
 			// aapt resource value: 0x7f090032
 			public const int withText = 2131296306;
@@ -3805,6 +3805,9 @@ namespace FiabeSenzaTempo
 			
 			// aapt resource value: 0x7f030029
 			public const int support_simple_spinner_dropdown_item = 2130903081;
+			
+			// aapt resource value: 0x7f03002a
+			public const int VideoViewer = 2130903082;
 			
 			static Layout()
 			{

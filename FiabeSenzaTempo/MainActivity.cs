@@ -20,13 +20,10 @@ namespace FiabeSenzaTempo
 	[Activity (Label = "Fiabe Senza Tempo", MainLauncher = true, Icon = "@drawable/favolesenzatempo", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
-		private const string m_playlist = "http://damicolo1.azurewebsites.net/FavoleSenzaTempoYoutube.txt";
+		private const string m_playlist = "http://damicolo1.azurewebsites.net/FiabeSenzaTempo/FavoleSenzaTempoYoutube.txt";
 		private ListView m_myList;
 		private FavoleListViewAdapter m_adapter;
-		private VideoView videoView;
-		private bool m_videoSourceSet = false;
 		private List<videoItem> m_theVideos = new List<videoItem>();
-		private System.Timers.Timer m_videoPregressTimer;
 
 		protected override async void OnCreate (Bundle bundle)
 		{
@@ -77,13 +74,7 @@ namespace FiabeSenzaTempo
 			m_myList.ItemClick += M_myList_ItemClick;
 			//m_myList.ItemLongClick += M_myList_ItemLongClick;
 
-			m_videoPregressTimer = new System.Timers.Timer ();
-			m_videoPregressTimer.Interval = 500;
-			m_videoPregressTimer.Elapsed += T_Elapsed;
 
-			videoView = FindViewById<VideoView>(Resource.Id.videoView1);
-			videoView.Touch += videoView_Touch;
-			videoView.Prepared += VideoView_Prepared;
 			// advertising setup
 			AdView mAdView = (AdView) this.FindViewById(Resource.Id.adView);
 			AdRequest adRequest = new AdRequest.Builder ().Build ();
@@ -107,19 +98,25 @@ namespace FiabeSenzaTempo
 			return null;
 		}
 
-		async void M_myList_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
+		void M_myList_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
 		{
-			((LinearLayout.LayoutParams)videoView.LayoutParameters).Weight = 40f;
 			Console.WriteLine ("M_myList_ItemClick " + e.Position.ToString ());
 			videoItem sellectedItem = m_theVideos [e.Position];
 			string videoID = sellectedItem.URL.Split (new char[] { '=' })[1];
+
+			Intent intent = new Intent(this, typeof(TheViewViewer));
+			intent.PutExtra ("videoID", videoID);
+			this.StartActivity (intent);
+
+
+			/*
+			((LinearLayout.LayoutParams)videoView.LayoutParameters).Weight = 40f;
 			try
 			{
 				YouTubeUri theURI = await  YouTube.GetVideoUriAsync(videoID,YouTubeQuality.Quality720P);
 				var uri = Android.Net.Uri.Parse(theURI.Uri.AbsoluteUri);
 				videoView.SetVideoURI(uri);
 				videoView.Start ();
-				m_videoSourceSet = true;
 
 				m_videoPregressTimer.Enabled = true;
 				m_videoPregressTimer.Start();
@@ -128,21 +125,9 @@ namespace FiabeSenzaTempo
 			{
 				Console.WriteLine (ex.ToString ());
 			}
+*/
 		}
 
-		void T_Elapsed (object sender, System.Timers.ElapsedEventArgs e)
-		{
-			RunOnUiThread(() =>
-				{
-					Console.WriteLine(videoView.CurrentPosition.ToString());
-				});
-				
-		}
-			
-		void VideoView_Prepared (object sender, EventArgs e)
-		{
-			Console.WriteLine (videoView.Duration.ToString());
-		}
 
 		protected override void OnPause()
 		{
@@ -153,19 +138,6 @@ namespace FiabeSenzaTempo
 		{
 			base.OnResume ();
 		}
-			
-		private void videoView_Touch(object sender, View.TouchEventArgs e)
-		{
-			if (e.Event.Action == MotionEventActions.Down) {
-				if (videoView.IsPlaying) {
-					m_videoPregressTimer.Stop ();
-					videoView.Pause ();
-				} else if (m_videoSourceSet) {
-					m_videoPregressTimer.Start ();
-					videoView.Start ();
-				}
-			}	
-		}					
 	}
 }
 

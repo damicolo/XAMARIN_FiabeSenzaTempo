@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ff1b7390">
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_weight="35"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <VideoView
         android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:id="@+id/myListView" />
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:id="@+id/videoViewer"
+        android:layout_centerInParent="true" />
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/ad_unit_id" />
-</LinearLayout>
+        ads:adUnitId="@string/ad_unit_id"
+        android:layout_alignParentLeft="true" />
+</RelativeLayout>
