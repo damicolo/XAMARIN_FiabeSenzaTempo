@@ -3,7 +3,6 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:descendantFocusability="blocksDescendants"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
     android:background="#ff1b7390">
@@ -32,5 +31,6 @@
         android:focusableInTouchMode="false"
         android:enabled="true"
         android:clickable="false"
-        android:textColor="#ffffffff" />
+        android:textColor="#ffffffff"
+        android:background="#ff1b7390" />
 </LinearLayout>
